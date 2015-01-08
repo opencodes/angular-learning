@@ -1,4 +1,4 @@
-reminder
+angular-learning
 ========
 
-Set Reminder and Notify
+Learn angular step by step
