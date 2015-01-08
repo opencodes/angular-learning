@@ -1,4 +1,4 @@
-angular-learning
-================
+reminder
+========
 
-My first angular project for learning and experiment.
+Set Reminder and Notify
