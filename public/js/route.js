@@ -10,7 +10,7 @@
 * @site      ....
 *
 */
- blogPost.config(function($routeProvider, $locationProvider){
+ blogPost.config(function($routeProvider){
 
      $routeProvider.when('/', {
          templateUrl: '../views/partials/home.html',
@@ -22,7 +22,11 @@
      })
      .when('/category/:id', {
              templateUrl: '../views/partials/category.html',
-             controller: 'postsCtrl'
+             controller: 'categoryCtrl'
+     })
+     .when('/post/:id', {
+         templateUrl: '../views/partials/post.html',
+         controller: 'postCtrl'
      }).
      otherwise({
          redirectTo: '/'

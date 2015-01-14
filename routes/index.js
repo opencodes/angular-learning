@@ -9,10 +9,15 @@ var router = function(app){
             res.render('index', { title: 'Angular APP'});
 
     });
+    /**
+     *
+     */
     app.get('/getCategory', function(req, res) {
         res.json(JSON.parse(data).category);
     });
-
+    /**
+     *
+     */
     app.get('/getPostByCat/:id', function(req, res) {
 
         var posts = JSON.parse(data).posts;
@@ -25,6 +30,20 @@ var router = function(app){
         }
         res.json(postByCat);
     });
+    /**
+     *
+     */
+    app.get('/getPostById/:id', function(req, res) {
+
+        var posts = JSON.parse(data).posts;
+
+        var post = (posts[req.params.id]) ? posts[req.params.id] : {"title" : "404 ! Page not found","body" : "Please try different URL"};
+
+        res.json(post);
+    });
+    /**
+     *
+     */
     app.get('/getPageInfo/:id', function(req, res) {
 
         var pages = JSON.parse(data).pages;

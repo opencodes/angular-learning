@@ -41,6 +41,18 @@ blogPost.factory('category', ['$http', function($http){
                  error(function(data, status, headers, config) {
                      return null
                  });
+         },
+         "getPostDetail" : function($scope, id){
+             if(!id){
+                 return null;
+             }
+
+             $http.get('/getPostById/'+id).success(function(data,status,headers,config){
+                 $scope.id = data.id;
+                 $scope.title = data.title;
+                 $scope.category = data.category;
+                 $scope.body = data.body;
+             })
          }
      }
      return fn;
